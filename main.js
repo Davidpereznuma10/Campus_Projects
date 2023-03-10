@@ -1,15 +1,11 @@
-//Build the algorithm for a program that inputs three
-//grades of a student, if the average is less than or equal to 3.9
-//display a message "Study", otherwise a message that
-//say "scholarship"
-
-let n1=parseFloat(prompt("input your firs note"));
-let n2=parseFloat(prompt("input your second note"));
-let n3=parseFloat(prompt("input your third note"));
-let average=((n1+n2+n3)/3.0);
-if (average<=3.9) {
-    console.log(`you must study more, because your average is: ${average}`);
-    
-}else {
-    console.log(`You have a scholarship, because your average is: ${average}`);
-}
+// Given a number, indicate if it is even or odd and if it is greater than 10.
+let number=prompt(`type a number`);
+if(10<number && number%2!=0){
+    console.log(`this number ${number} is odd and greater than 10`)
+}else if(10>number && number%2!=0){
+    console.log(`this number ${number} is odd and smaller than 10`)
+}else if(10<number && number%2==0){
+    console.log(`this number ${number} is even and greater than 10`)
+}else if(10>number && number%2==0){
+        console.log(`this number ${number} is even and smaller than 10`)
+}else{console.log(`this is not a number ${Number}`)}
