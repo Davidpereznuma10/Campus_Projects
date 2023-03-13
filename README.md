@@ -8,20 +8,20 @@
 
   <h4 align="center">
 WHERE THE MAGIG IS BORN 
-   </h4>
+  </h4>
 
 <p align="center">
  <img src="https://img.shields.io/badge/STATE-DEVELOPING-green">
 </p>
 
 ------------
-                                                             
+
 # <h1 align="center">[Workshop1_js](http://github.com/Davidpereznuma10/Campus_Projects/tree/workshop1_js "Workshop1_js")</h1>
 This branch is created for JavaScript Workshop .
 contains 10 points where we test our knowledge previously acquired in the software skills class
 
-- [Exercise 1]()
-- [Exercise 2]()
+- [Exercise 1](https://github.com/Davidpereznuma10/Campus_Projects/commit/03fa7c27ceb94338a023456cec6388cfe660a561)
+- [Exercise 2](https://github.com/Davidpereznuma10/Campus_Projects/commit/acd5548839b080c2586f53ed4cae6886ac4acf5f)
 - [Exercise 3]()
 - [Exercise 4]()
 - [Exercise 5]()
