@@ -1,17 +1,19 @@
-//Build the algorithm that requests the name and age of 3
-//people and determine the name of the oldest person.
+// Build the algorithm that reads two numbers from the keyboard,
+// If the first is greater than the second, report their sum and
+// difference, otherwise, inform the product and the
+// division of the first by the second.
+const n1 = parseFloat(prompt("Type the first number"));
+const n2 = parseFloat(prompt("Type the Second number"));
 
-const people=[
-    {Name:(prompt("Type the name")), Age:(parseFloat(prompt("Type the age")))},
-    {Name:(prompt("Type the name")), Age:(parseFloat(prompt("Type the age")))},
-    {Name:(prompt("Type the name")), Age:(parseFloat(prompt("Type the age")))}
-  ];
-  
-  const Ages = people.map(item=>item.Age)
-  const max = Math.max(...Ages);
-  const oldest = people.find(function(element) {
-    return element.Age === max;
-  });
-  
-  console.log(oldest);
-  
+if (n1 > n2) {
+  let add = n1 + n2;
+  let dif = n1 - n2;
+  console.log(`The Addition result is: ${add}, and the difference between the numbers is: ${dif}`);
+} else if (n1 < n2) {
+  let mul = n1 * n2;
+  let div = n1 / n2;
+  console.log(`The product result is ${mul}, and the division result is: ${div}`);
+} else {
+  console.log("The two numbers are the same");
+};
+
