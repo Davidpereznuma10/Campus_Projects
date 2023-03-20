@@ -11,7 +11,7 @@ WHERE THE MAGIG IS BORN
   </h4>
 
 <p align="center">
- <img src="https://img.shields.io/badge/STATE-DEVELOPING-green">
+ <img src="https://img.shields.io/badge/STATE-FINISHED-red">
 </p>
 
 ------------
