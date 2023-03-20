@@ -64,6 +64,6 @@ contains 10 points where we test our knowledge previously acquired in the softwa
 - [Exercise 7](https://github.com/Davidpereznuma10/Campus_Projects/commit/8ee1a6cd92518cdb8ec74fc27a623c56619f7f0b)
 - [Exercise 8](https://github.com/Davidpereznuma10/Campus_Projects/commit/71813047829fba2fcf7822917e26f6c2c69a41f1)
 - [Exercise 9](https://github.com/Davidpereznuma10/Campus_Projects/commit/4909393e10d416ef6f7cd6de30cd523772927c5c)
-- [Exercise 10]()
+- [Exercise 10](https://github.com/Davidpereznuma10/Campus_Projects/commit/28dd35b67bcc87e1bb7de464a132bc272ca176d0)
 
 ------------
