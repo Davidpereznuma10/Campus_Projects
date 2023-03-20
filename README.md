@@ -28,6 +28,7 @@ giving each project a branch, in which it will have its respective development.
 - [Pyautogui](https://github.com/Davidpereznuma10/Campus_Projects/tree/Pyautogui "Pyautogui")
 - [Workshop_basic_basic](https://github.com/Davidpereznuma10/Campus_Projects/tree/workshop_basic_basic "Workshop_basic_basic")
 - [Workshop1_js](http://github.com/Davidpereznuma10/Campus_Projects/tree/workshop1_js "Workshop1_js")
+- [workshop2_js](https://github.com/Davidpereznuma10/Campus_Projects/tree/workshop2_js)
 
 ------------
 
@@ -67,3 +68,9 @@ contains 10 points where we test our knowledge previously acquired in the softwa
 - [Exercise 10](https://github.com/Davidpereznuma10/Campus_Projects/commit/28dd35b67bcc87e1bb7de464a132bc272ca176d0)
 
 ------------
+
+# <h1 align="center">[workshop2_js](https://github.com/Davidpereznuma10/Campus_Projects/tree/workshop2_js)</h1>
+This branch is created for JavaScript Workshop .
+This is a workshop about a Campus form with Html y JavaScript with management of DOM.
+
+- [Github Pages](https://davidpereznuma10.github.io/Campus_Projects/)
