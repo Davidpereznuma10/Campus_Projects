@@ -1,30 +1,26 @@
-// N athletes have advanced to triple jump finals in the games
-// 2022 Women's Olympians. Design a program that asks for
-// keyboard the names of each finalist athlete and in turn, their
-// marks of the jump in meters. Inform the name of the athlete
-// champion to keep the gold medal and if she broke
-// Record, report the payment that will be 500 million. Register
-// It is at 15.50 meters.
-const recordtop = 15.50;
-const num = parseInt(prompt("How many athletes do you want to type?"));
-const olimpics = [];
+//Develop a cyclical program that captures a data
+// number each time, and accumulate them. The program will
+// stops when the user types a zero. The program must
+// show: THE SUM OF THE VALUES, THE VALUE OF THE
+// AVERAGE, HOW MANY VALUES WERE ENTERED, GREATER
+// VALUE AND LESS VALUE.
 
-for (let i = 0; i < num; i++) {
-  const olimpic = {
-    Athlete: prompt(`Type the Athlete ${i + 1} Name`),
-    Mark: parseFloat(prompt(`Type the marks of athlete ${i + 1} on the jump in meters`))
-  };
-  olimpics.push(olimpic);
+const myArray = [];
+let addNum = 1;
+
+while (addNum !== 0) {
+    addNum = parseInt(prompt("Type a number"));
+    myArray.push(addNum);
 };
+myArray.pop(0);
 
-console.table(olimpics);
+const add = myArray.reduce((total, num) => total + num, 0);
+const prom = add/myArray.length;
+const max = Math.max(...myArray);
+const min = Math.min(...myArray);
 
-const jumps = olimpics.map(item => item.Mark);
-const best = Math.max(...jumps);
-const record = olimpics.find(function(element) {
-  if (best >= recordtop) {
-    console.log(`Congrats you have broken the world record ${recordtop} mts, your mark was ${best} mts, you win the gold medal also you win 500 million.`);
-  } else {
-    console.log(`You have won the gold medal, your mark was ${best}`);
-  }
-});
+console.log(`The addition Result is= ${add}`);
+console.log(`The average is= ${prom}`);
+console.log(`The array length is= ${myArray.length}`);
+console.log(`The max number into the array is= ${max}`);
+console.log(`The min number into the array is= ${min}`)
