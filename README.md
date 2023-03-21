@@ -25,7 +25,7 @@ giving each project a branch, in which it will have its respective development.
 
 ------------
 
-# <h1 align="center">[Workshop1_js](http://github.com/Davidpereznuma10/Campus_Projects/tree/workshop1_js "Workshop1_js")</h1>
+# <h1 align="center">[Workshop2_js](http://github.com/Davidpereznuma10/Campus_Projects/tree/workshop2_js "Workshop1_js")</h1>
 This branch is created for JavaScript Workshop .
 This is a workshop about a Campus form with Html y JavaScript with management of DOM.
 
