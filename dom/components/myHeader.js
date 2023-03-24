@@ -1,7 +1,8 @@
 export default{
     title : {
         name:"Panic At The Disco",
-        href:"https://open.spotify.com/artist/20JZFwl6HVl6yg8a4H3ZqK?si=NU3Pe6g4R_yKP0xnEjjVGg"
+        href:"https://open.spotify.com/artist/20JZFwl6HVl6yg8a4H3ZqK?si=NU3Pe6g4R_yKP0xnEjjVGg",
+        logo:"../dom/style/img/icon.png"
     },
     Albums:[
         {
@@ -35,7 +36,9 @@ export default{
     ],
     lisTittle(){
         document.querySelector("#Tittle").insertAdjacentHTML("beforeend",`
-        <a class="blog-header-logo text-dark" href="${this.title.href}">${this.title.name}</a>`)
+        <img id="icono-left" src="../dom/style/img/icon.png"/>
+        <a class="blog-header-logo text-black" href="${this.title.href}">${this.title.name}</a>
+        <img id="icono-rigth" src="../dom/style/img/icon.png"/>`)
     },
     listAlbums(){
         let ShowAlb = "";
