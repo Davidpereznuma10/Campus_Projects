@@ -34,18 +34,26 @@ export default{
             href: "https://open.spotify.com/album/25DhBz5cckEAFcivcSzSTo?si=jros39QFRFyC5Svn2VN6UQ",
         }
     ],
-    lisTittle(){
-        document.querySelector("#Tittle").insertAdjacentHTML("beforeend",`
-        <img id="icono-left" src="../dom/style/img/icon.png"/>
-        <a class="blog-header-logo text-black" href="${this.title.href}">${this.title.name}</a>
-        <img id="icono-rigth" src="../dom/style/img/icon.png"/>`)
-    },
-    listAlbums(){
-        let ShowAlb = "";
-        this.Albums.forEach((val,id) => {
-            ShowAlb += `<a class="p-2 link-secondary" href="${val.href}">${val.name}</a>`
-        });
-        document.querySelector("#Albums").insertAdjacentHTML("beforeend", 
-        ShowAlb);
-    }
-}
+showAll(){
+        // creamos el Worker
+            const ws = new Worker(".\dom\components\ws\wsMyHeader.js", {type:"module"});
+        // enviar un mensaje al worker        
+            let id = [];
+            let count = 0;
+        // id.push(#company)
+            ws.postMessage({module: "lisTitle", data:this.title});
+        // id.push(#title)
+            ws.postMessage({module: "listAlbums", data:this.Albums});
+        // Le indicamos cuales don las id a recorrer
+            id = ["#Albums","#Title"];
+        // Lo que llega al worker        
+            ws.addEventListener("message", (e)=>{
+        // Estamos parseando el evento del (mensaje), se convierte en html
+                let doc = new DOMParser().parseFromString(e.data,"text/html");
+        // insertamos en nuestro html, en el selector #Albums
+                document.querySelector(id[count]).append(...doc.body.children);
+        // Terminamos el worker
+                (id.length-1==count) ? ws.terminate(): count++;
+            })        
+        }
+    };

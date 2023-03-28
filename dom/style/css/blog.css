@@ -121,6 +121,9 @@ h1, h2, h3, h4, h5, h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+
+/*********My css*********/
 #links {
   color: goldenrod;;
 }
@@ -146,7 +149,6 @@ h1, h2, h3, h4, h5, h6 {
   background-position: center;
   background-size: 100%;
   background-repeat:no-repeat ;
-  
 }
 #cards{
   color: goldenrod;
@@ -157,4 +159,13 @@ h1, h2, h3, h4, h5, h6 {
   object-fit: fill;
   border-radius: 15%;
 
+}
+.table{
+  align-items: center;
+}
+.cabeza{
+  color: goldenrod;
+}
+.cuerpo{
+  color: white;
 }

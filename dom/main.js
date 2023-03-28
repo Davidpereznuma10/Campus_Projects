@@ -4,8 +4,8 @@ import myCards from "./components/myCards.js";
 import myArticles from "./components/myArticles.js";
 
 //headers
-myHeader.listAlbums();
-myHeader.lisTittle();
+console.log(myHeader.showAll());
+
 //Banners
 myBanner.showBackground();
 myBanner.showBanner();
