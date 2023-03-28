@@ -34,25 +34,27 @@ export default{
             href: "https://open.spotify.com/album/25DhBz5cckEAFcivcSzSTo?si=jros39QFRFyC5Svn2VN6UQ",
         }
     ],
-showAll(){
-        // creamos el Worker
-            const ws = new Worker(".\dom\components\ws\wsMyHeader.js", {type:"module"});
-        // enviar un mensaje al worker        
+    
+    showAll(){
+        
+            const ws = new Worker("components/ws/wsMyHeader.js", {type:"module"});
+        
             let id = [];
             let count = 0;
-        // id.push(#company)
+        
             ws.postMessage({module: "lisTitle", data:this.title});
-        // id.push(#title)
+        
             ws.postMessage({module: "listAlbums", data:this.Albums});
-        // Le indicamos cuales don las id a recorrer
-            id = ["#Albums","#Title"];
-        // Lo que llega al worker        
+        
+            id = ["#Tittle","#Albums"];
+        
             ws.addEventListener("message", (e)=>{
-        // Estamos parseando el evento del (mensaje), se convierte en html
+        
                 let doc = new DOMParser().parseFromString(e.data,"text/html");
-        // insertamos en nuestro html, en el selector #Albums
+                console.log(...doc.body.children)
+
                 document.querySelector(id[count]).append(...doc.body.children);
-        // Terminamos el worker
+
                 (id.length-1==count) ? ws.terminate(): count++;
             })        
         }

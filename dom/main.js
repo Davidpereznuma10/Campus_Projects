@@ -4,7 +4,7 @@ import myCards from "./components/myCards.js";
 import myArticles from "./components/myArticles.js";
 
 //headers
-console.log(myHeader.showAll());
+myHeader.showAll();
 
 //Banners
 myBanner.showBackground();
