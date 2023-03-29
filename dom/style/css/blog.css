@@ -124,8 +124,32 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*********My css*********/
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #daa520 #000000;
+    scrollbar-width: none;
+
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+    overflow-x:hidden;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #daa520;
+    border-radius: 20px;
+    border: 10px double #000000;
+  }
 #links {
-  color: goldenrod;;
+  color: goldenrod;
 }
 #icono-left{
   width: 50px;
@@ -168,4 +192,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .cuerpo{
   color: white;
+}
+#sidebar{
+  background-color:black;
 }
