@@ -1,9 +1,9 @@
 export default {
-    sention:{
+    section:{
         title: " BAND HISTORY ",
         articles:[
           {
-            title:"Formation as rock band and early years",
+            Album:"Formation as rock band and early years",
             year:"2004–2005",
             paragraph:"Panic! at the Disco was formed in 2004 in the suburban area of Summerlin, Las Vegas,by childhood friends Ryan Ross, who sang and played guitar, and Spencer Smith, who played drums.they began playing music together in ninth grade.They invited friend Brent Wilson  and Wilson invited classmate Brendon Urie to try out on guitar.Ross initially was the lead singer for the group, but after hearing Urie sing back-up during rehearsals, the group decided to make him the lead. Initially, Panic! at the Disco was a Blink-182 cover band. The four left their educations behind to concentrate on music; Ross had a falling-out with his father when he dropped out of college, and when Urie dropped out of high school, his parents kicked him out of the house.Ross and Urie sent a demo to Fall Out Boy bassist Pete Wentz via a LiveJournal account. Wentz,who was in Los Angeles at the time with the rest of Fall Out Boy working on the band's major-label debut, Wentz was impressed and immediately wanted the band to sign to his Fueled by Ramen imprint label Decaydance Records, which made the band the first on the new label. in the 2005 MTV Video Music Awards Wentz said. 'Their record is going to be your next favorite record. It's called A Fever You Can't Sweat Out – get it before your little brother does.'",
           },
@@ -518,9 +518,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {num:"#"},
+                  {name:"Name"},
+                  {time:"Duration"},
                 ]
               },
               {
@@ -552,7 +552,7 @@ export default {
                   },
                   {
                     Position:"6.",
-                    3:46     Time:"3:30",
+                    Time:"3:30",
                   },
                   {
                     Position:"8.",
@@ -583,13 +583,67 @@ export default {
               }
             ]
           },
-          
-        ]
+        ],
+        Artistes:[
+          {
+            ArtNn:"All Panic! at the Disco Musicans",
+            timeArt:[
+              {
+                name:"<a id='links' href=''>Brendon Urie </a>",
+                time:"2004-2023",
+              },
+              {
+                name:"<a id='links' href=''>Ryan Ross</a>",
+                time:"2004-2009",
+              },
+              {
+                name:"<a id='links' href=''>Brent Wilson</a>",
+                time:"2004-2006",
+              },
+              {
+                name:"<a id='links' href=''>Jon Walker</a>",
+                time:"2004-2006",
+              },
+              {
+                name:"<a id='links' href=''>Dallon Weekes</a>",
+                time:"2006-2009",
+              },
+              {
+                name:"<a id='links' href=''>Spencer Smith</a>",
+                time:"2004-2015",
+              },
+            ],
+            image:"/dom/style/img/ArtisTime.png",
+          }],
     },
 
     showSection() {
         document.querySelector('#section').insertAdjacentHTML("beforeend",`
-          <h2 class="pb-4 mb-4 fst-italic border-bottom" strong>${this.sention.title}</h2>
-        `);},
+          <h2 class="pb-4 mb-4 fst-italic border-bottom" strong>${this.section.title}</h2>`);},
+    ShowArticles(){
+      this.section.articles.map((val,id)=>{
+        document.querySelector("#Articles").insertAdjacentHTML("beforeend",`<article class="blog-post">
+        <h2 class="blog-post-title" strong>${val.Album}</h2>
+        <p class="blog-post-meta">${val.year}</p>
+         <p>${val.paragraph}</p>
+
+         <legend>Songs</legend>
+            <table class="table">
+              <thead class="cabeza">
+                <tr>
+                  <th>${val.num}</th>
+                  <th>Upvotes</th>
+                  <th>Downvotes</th>
+                </tr>
+              </thead>
+              <tbody class="cuerpo">
+                <tr>
+                  <td>Totals</td>
+                  <td>21</td>
+                  <td>23</td>
+                </tr>
+              </tbody>
+            </|table>
+        <hr>`)})},
 
 }

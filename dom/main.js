@@ -14,5 +14,7 @@ myBanner.showBanner();
 myCards.showDes();
 //Articles
 myArticles.showSection();
+myArticles.ShowArticles();
+
 //Sidebar
 myside.showSidebar();

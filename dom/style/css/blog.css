@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== Scrollbar CSS ===== */
   /* Firefox */
   * {
-    scrollbar-width: auto;
+    scrollbar-width: none;
     scrollbar-color: #daa520 #000000;
     scrollbar-width: none;
 
