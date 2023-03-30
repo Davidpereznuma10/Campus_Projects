@@ -4,6 +4,7 @@ import myCards from "./components/myCards.js";
 import myArticles from "./components/myArticles.js";
 import myside from "./components/mySide.js";
 
+
 //headers
 myHeader.showAll();
 
@@ -15,6 +16,6 @@ myCards.showDes();
 //Articles
 myArticles.showSection();
 myArticles.ShowArticles();
-
+myArticles.ShowTime();
 //Sidebar
 myside.showSidebar();

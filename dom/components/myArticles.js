@@ -14,9 +14,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -97,9 +97,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -190,9 +190,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -283,9 +283,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -361,9 +361,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -434,9 +434,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {topic:"#"},
-                  {topic:"Name"},
-                  {topic:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -518,9 +518,9 @@ export default {
             table:[
               {
                 headtable:[
-                  {num:"#"},
-                  {name:"Name"},
-                  {time:"Duration"},
+                  {topic1:"#"},
+                  {topic2:"Name"},
+                  {topic3:"Duration"},
                 ]
               },
               {
@@ -589,27 +589,27 @@ export default {
             ArtNn:"All Panic! at the Disco Musicans",
             timeArt:[
               {
-                name:"<a id='links' href=''>Brendon Urie </a>",
+                name:"<a id='links' href='https://en.wikipedia.org/wiki/Brendon_Urie'>Brendon Urie </a>",
                 time:"2004-2023",
               },
               {
-                name:"<a id='links' href=''>Ryan Ross</a>",
+                name:"<a id='links' href='https://en.wikipedia.org/wiki/Ryan_Ross'>Ryan Ross</a>",
                 time:"2004-2009",
               },
               {
-                name:"<a id='links' href=''>Brent Wilson</a>",
+                name:"<a id='links' href='https://es.wikipedia.org/wiki/Brent_Wilson'>Brent Wilson</a>",
                 time:"2004-2006",
               },
               {
-                name:"<a id='links' href=''>Jon Walker</a>",
+                name:"<a id='links' href='https://en.wikipedia.org/wiki/Jon_Walker'>Jon Walker</a>",
                 time:"2004-2006",
               },
               {
-                name:"<a id='links' href=''>Dallon Weekes</a>",
+                name:"<a id='links' href='https://en.wikipedia.org/wiki/Dallon_Weekes'>Dallon Weekes</a>",
                 time:"2006-2009",
               },
               {
-                name:"<a id='links' href=''>Spencer Smith</a>",
+                name:"<a id='links' href='https://en.wikipedia.org/wiki/Spencer_Smith_(musician)'>Spencer Smith</a>",
                 time:"2004-2015",
               },
             ],
@@ -622,28 +622,39 @@ export default {
           <h2 class="pb-4 mb-4 fst-italic border-bottom" strong>${this.section.title}</h2>`);},
     ShowArticles(){
       this.section.articles.map((val,id)=>{
+        // console.log("esto es lo que revisamos: ",val);
         document.querySelector("#Articles").insertAdjacentHTML("beforeend",`<article class="blog-post">
         <h2 class="blog-post-title" strong>${val.Album}</h2>
         <p class="blog-post-meta">${val.year}</p>
          <p>${val.paragraph}</p>
 
          <legend>Songs</legend>
-            <table class="table">
-              <thead class="cabeza">
-                <tr>
-                  <th>${val.num}</th>
-                  <th>Upvotes</th>
-                  <th>Downvotes</th>
-                </tr>
-              </thead>
-              <tbody class="cuerpo">
-                <tr>
-                  <td>Totals</td>
-                  <td>21</td>
-                  <td>23</td>
-                </tr>
-              </tbody>
-            </|table>
+         <table class="table">
+           <thead class="cabeza">
+             <tr>
+               <th></th>
+               <th>Upvotes</th>
+               <th>Downvotes</th>
+             </tr>
+           </thead>
+           <tbody class="cuerpo">
+             <tr>
+               <td>Totals</td>
+               <td>21</td>
+               <td>23</td>
+             </tr>
+           </tbody>
+         </|table>
+
         <hr>`)})},
+      ShowTime(){
+        this.section.Artistes.forEach((val,id)=>{
+          // console.log(`showit`,val.timeArt)
+          document.querySelector("#Artistes").insertAdjacentHTML("beforeend",`
+          <ul>
+            <li>${val.timeArt.name}-${val.timeArt.time}</li>
+          </ul>`)
+        })
+      }
 
 }

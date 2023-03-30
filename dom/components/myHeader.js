@@ -37,7 +37,7 @@ export default{
     
     showAll(){
         
-            const ws = new Worker("components/ws/wsMyHeader.js", {type:"module"});
+            const ws = new Worker("components/storage/wsMyHeader.js", {type:"module"});
         
             let id = [];
             let count = 0;
