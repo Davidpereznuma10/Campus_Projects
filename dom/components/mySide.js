@@ -5,7 +5,7 @@ export default {
         text:"Panic! at the Disco was an American pop rock band from Las Vegas, Nevada, formed in 2004 by childhood friends <a id='links' href='https://en.wikipedia.org/wiki/Ryan_Ross'>Ryan Ross</a>, <a id='links' href='https://en.wikipedia.org/wiki/Spencer_Smith_(musician)'>Spencer Smith</a>, Brent Wilson, and <a id='links' href='https://en.wikipedia.org/wiki/Brendon_Urie'>Brendon Urie</a>. Following several lineup changes, Panic! began operating as the solo project of frontman Urie from 2015 until the project's discontinuation in 2023."
     },
         {
-            title:"The most Popular track",
+            title:"The most Popular tracks",
             link: [
                     {
                         name:"House of Memories",

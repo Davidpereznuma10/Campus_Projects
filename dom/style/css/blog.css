@@ -115,8 +115,8 @@ h1, h2, h3, h4, h5, h6 {
   padding: 2.5rem 0;
   color: #727272;
   text-align: center;
-  background-color: #f9f9f9;
-  border-top: .05rem solid #e5e5e5;
+  background-color: black;
+  border-top: .05rem double goldenrod;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
@@ -125,6 +125,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /*********My css*********/
 /* ===== Scrollbar CSS ===== */
+*{
+overflow-x: none;
+}
   /* Firefox */
   * {
     scrollbar-width: none;
@@ -184,14 +187,30 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 15%;
 
 }
+#Articles{
+  text-align:justify;
+}
 .table{
   align-items: center;
 }
 .cabeza{
   color: goldenrod;
+  text-align: center;
 }
 .cuerpo{
+  text-align: center;
   color: white;
+}
+#Artistes{
+  display: inline-flex;
+  
+}
+.time{
+  max-width: 80%;
+  height: 80%;
+  padding: 2%;
+  align-self: center;  
+ 
 }
 #sidebar{
   background-color:black;

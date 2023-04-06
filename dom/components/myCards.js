@@ -91,7 +91,7 @@ export default {
                 <a id="links" href="${val.btn.href}" class="stretched-link">${val.btn.name}</a>
               </div>
               <div class="col-auto d-none d-lg-block">
-                <img class="responsiveimg" src="${val.covered}"></img>
+                <img class="responsiveimg" src="${val.covered}">
               </div>
             </div>
           </div>`)
