@@ -1,21 +1,17 @@
 import myHeader from "./components/myHeader.js";
 import myBanner from "./components/myBanner.js";
 import myCards from "./components/myCards.js";
-import myArticles from "./components/myArticles.js";
+import myArticle from "./components/myArticles.js";
 import myside from "./components/mySide.js";
 
 
 //headers
-myHeader.showAll();
-
+myHeader.showHeader();
 //Banners
-myBanner.showBackground();
-myBanner.showBanner();
+myBanner.ShowAllBanner();
 //cards
-myCards.showDes();
+myCards.showCards();
 //Articles
-myArticles.showSection();
-myArticles.ShowArticles();
-myArticles.ShowTime();
+myArticle.ShowArticles();
 //Sidebar
-myside.showSidebar();
+myside.showSide();

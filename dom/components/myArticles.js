@@ -587,66 +587,17 @@ export default {
       },
     ],
   },
-
-  showSection() {
-    document.querySelector("#section").insertAdjacentHTML(
-      "beforeend",
-      `
-          <h2 class="pb-4 mb-4 fst-italic border-bottom" strong>${this.section.title}</h2>`
-    );
-  },
-  ShowArticles() {
-    this.section.articles.map((val, id) => {
-      console.log("esto es lo que revisamos: ", val.table);
-      document.querySelector("#Articles").insertAdjacentHTML(
-        "beforeend",
-        `<article class="blog-post">
-        <h2 class="blog-post-title" strong>${val.Album}</h2>
-        <p class="blog-post-meta">${val.year}</p>
-         <p>${val.paragraph}</p>
-         ${this.Table(val)}
-        <hr>`
-      );
-    });
-  },
-  Table(data){
-    let text = '';
-    if(data.table){  
-      return `
-      <table class="table">
-        <thead class="cabeza">
-          <tr class="text-black">
-          ${data.table[0].headtable.map(el => text =  `<th>${el}</th>`).join("")}
-          </tr>
-        </thead>
-        <tbody class="cuerpo">    
-          ${data.table[1].bodytable.map(el => text = 
-            `<tr>
-              <td>${el.Position}</td>
-              <td>${el.Name}</td>
-              <td>${el.Time}</td>
-            </tr>`).join("")}     
-        </tbody>
-      </table>`;
-    };
-  },
-  
-  ShowTime() {
-    this.section.Artistes.forEach((val, id) => {
-      console.log(`showit`, val.timeArt);
-      document.querySelector("#Artistes").insertAdjacentHTML(
-        "beforeend",
-        `
-          <ul>
-            ${this.getList(val)}
-          </ul>
-          <img class="time" src="${val.image}">`
-      );
-    });
-  },
-  getList(val){
-    let text = '';
-    val.timeArt.forEach(el => text += `<li>${el.name}<br><sup>${el.time}</sup></li>`);
-    return text;
-  }
-};
+ShowArticles(){
+  const ws = new Worker ("components/storage/wsMyArticles.js",{type:"module"});
+  let count = 0;
+  ws.postMessage({module:"showTittle", data:this.section});
+  ws.postMessage({module:"showParagraph", data:this.section.articles});
+  ws.postMessage({module:"ShowTime",data:this.section.Artistes})
+  let id = ["#section","#Articles","#Artistes"];
+  ws.addEventListener("message",(e)=>{
+  let doc = new DOMParser().parseFromString(e.data,"text/html");
+  console.log(id[count])
+    document.querySelector(id[count]).append(...doc.body.children);
+    (id.length-1==count) ? ws.terminate(): count++;
+  })
+}};

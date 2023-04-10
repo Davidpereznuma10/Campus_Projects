@@ -62,31 +62,13 @@ export default {
         {
             name:"Instagram",
             href:"https://www.instagram.com/panicatthedisco/",
-        },]
-    },
-],
-showSidebar(){
-    const data = this.nav.map((val,id)=>{
-        return((val.link)?this.list(val):this.cards(val));
-    });
-    document.querySelector("#sidebar").insertAdjacentHTML("beforeend", data.join(""));
-},
-cards(val){
-    return `
-        <div class="p-4 mb-3 bg-black rounded">
-            <h4 class="fst-italic" strong>${val.title}</h4>
-            <p class="mb-0" em>${val.text}</p>
-        </div>
-    `;
-},
-list(val){
-    return `
-        <div class="p-4">
-            <h4 class="fst-italic">${val.title}</h4>
-            <ol class="list-unstyled">
-                ${val.link.map((val,id)=> `<li><a id="links"  href="${val.href}">${val.name}</a></li>`).join("")}
-            </ol>
-        </div>
-    `;
-}
+        },]},],
+showSide(){
+   const ws= new Worker ("components/storage/wsMyside.js",{type:"module"});
+    ws.postMessage({module:"showSidebar", data:this.nav});
+    ws.postMessage({module:"cards", data:this.nav});
+    ws.postMessage({module:"list", data:this.nav});
+    ws.addEventListener("message",(e)=>{
+        let doc = new DOMParser().parseFromString(e.data,"text/html");
+    document.querySelector("#sidebar").append(...doc.body.children);});}
 }

@@ -78,23 +78,12 @@ export default {
                 },
         },
     ],
-    showDes(){
-        this.albums.forEach((val,id)=>{
-            document.querySelector("#cards").insertAdjacentHTML("beforeend",`
-            <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" id="cards">
-              <div class="col p-4 d-flex flex-column position-static">
-                <strong class="d-inline-block mb-2 text-primary ">${val.articles}</strong>
-                <h3 class="mb-0">${val.name}</h3>
-                <div class="mb-1 text-muted">${val.year}</div>
-                <p class="card-text mb-auto" text->${val.paragraph} </p>
-                <a id="links" href="${val.btn.href}" class="stretched-link">${val.btn.name}</a>
-              </div>
-              <div class="col-auto d-none d-lg-block">
-                <img class="responsiveimg" src="${val.covered}">
-              </div>
-            </div>
-          </div>`)
-        });
+    showCards(){
+        const ws = new Worker ("components/storage/wsMyCards.js", {type:"module"});
+        ws.postMessage({module:"showDes", data:this.albums});
+        ws.addEventListener("message", (e)=>{
+            let doc = new DOMParser().parseFromString(e.data,"text/html");
+            document.querySelector("#cards").append(...doc.body.children);
+        })
     }
 }
