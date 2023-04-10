@@ -616,7 +616,7 @@ export default {
       <table class="table">
         <thead class="cabeza">
           <tr class="text-black">
-          ${data.table[0].headtable.map(el => text =  `<th>${el}</th>`)}
+          ${data.table[0].headtable.map(el => text =  `<th>${el}</th>`).join("")}
           </tr>
         </thead>
         <tbody class="cuerpo">    
@@ -625,7 +625,7 @@ export default {
               <td>${el.Position}</td>
               <td>${el.Name}</td>
               <td>${el.Time}</td>
-            </tr>`)}     
+            </tr>`).join("")}     
         </tbody>
       </table>`;
     };

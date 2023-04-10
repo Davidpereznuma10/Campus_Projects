@@ -14,6 +14,5 @@ let wsMyHeader = {
     }
 }
 self.addEventListener("message", (e)=>{
-    console.log(e.data)
     postMessage(wsMyHeader[`${e.data.module}`](e.data.data));
 });
