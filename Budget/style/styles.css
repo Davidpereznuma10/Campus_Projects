@@ -1,0 +1,36 @@
+
+#head{
+    color:  white ;
+    background-color: none;
+    position: fixed;
+    padding: 0px ;
+    font-size: 200%;
+}
+#header_main{
+    display: grid ;
+    justify-content: center;
+    text-align: center;
+    background-image: url("./img/Bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;;
+    background-position: center ;
+    padding: 5%;
+    color: white ;;
+}
+#cotent{
+    display: grid ;
+    justify-content: center;
+    text-align: center;
+}
+#tables{
+    display: flex; 
+    justify-content: center; 
+    gap: 20%;
+}
+.table {
+    border-collapse: separate;
+    border-spacing: 10px; 
+    width: auto;
+    text-align: center;
+}
+  
