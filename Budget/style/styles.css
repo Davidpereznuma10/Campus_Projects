@@ -17,6 +17,12 @@
     padding: 5%;
     color: white ;;
 }
+#myIngreso{
+    background-color: #03ff64;
+}
+#myEgreso{
+    background-color: brown;
+}
 #cotent{
     display: grid ;
     justify-content: center;

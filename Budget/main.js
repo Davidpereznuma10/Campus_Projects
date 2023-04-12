@@ -1,5 +1,6 @@
-import proyectar  from "./Components/proyectar.js"
+import proyectar from "./Components/proyectar.js";
 
-
+proyectar.showValores();
+proyectar.consolelog();
 
 
