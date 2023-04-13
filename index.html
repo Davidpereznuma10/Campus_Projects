@@ -8,17 +8,19 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <form>
+    <form id="myForm">
         <fieldset>
             <legend>Clase Lapiz</legend>
             <label>Color</label>
-            <input type="color" name="color"><br>
-            <label>Dimension</label>
-            <input type="range" name="dimension"><br>
+            <input id="color" type="color" name="color"><br>
+        <div>
+            <label>Dimension <span id="valor"></span></label>
+            <input id="range" type="range" name="dimension" min="0" max="100" step="1"><br>
+        </div>
             <fieldset>
                 <legend>Marca</legend>
+                <input type="radio" name="marca" value="Norma" ><label>Norma</label><br>
                 <input type="radio" name="marca" value="Mongo"><label>Mongo</label><br>
-                <input type="radio" name="marca" value="Norma"><label>Norma</label><br>
                 <input type="radio" name="marca" value="Fabel Castle"><label>Fabel Castle</label><br>
                 <input type="radio" name="marca" value="Big"><label>Big</label><br>
             </fieldset>
