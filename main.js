@@ -5,19 +5,15 @@ const valorRango = document.querySelector("#valor");
 const myMarca= document.querySelectorAll('input[name="marca"]');
 const myBorrador = document.querySelector('input[name="borrador"]');
 const myMaterial= document.querySelectorAll('input[name="material"]');
-const No_Tiene = false;
-const Tiene = true;
 
 
 myRango.addEventListener('input', (e)=>{
     const valor = e.target.value;
     valorRango.textContent= `${valor} Cm`;
 });
-
-
 class lapiz{
     #marca
-    constructor({ color="#FF0000", range = 18, borrador = Tiene, material="madera", marca="Norma" }){
+    constructor({ color="#FF0000", range = 18 , borrador = true, material="madera", marca="Norma" }){
         this.color = color;
         this.range = range;
         this.borrador= borrador;
@@ -32,12 +28,24 @@ class lapiz{
     setRange(nuevoRango){this.range = nuevoRango;}
 }
 
+
 const lectura = myForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const selectedMarca = document.querySelector('input[name="marca"]:checked');
     const formData = new FormData(myForm);
     const formDataObj = Object.fromEntries(formData.entries());
-    if (selectedMarca) {formDataObj.marca = selectedMarca.value;}
+    if (selectedMarca) {formDataObj.marca = selectedMarca.value;};
     const miLapiz = new lapiz(formDataObj)
-    console.log(miLapiz);
+    const table = document.querySelector("#table").insertAdjacentHTML("beforeend",`
+    <tr>
+           <th>${miLapiz.color}</th>
+           <th>${miLapiz.range} Cm</th>
+           <th>${miLapiz.getMarca()}</th>
+           <th>${miLapiz.borrador}</th>
+           <th>${miLapiz.material}</th>
+   </tr>`);
+    console.table(miLapiz);
 });
+
+
+
