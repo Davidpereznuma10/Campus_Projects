@@ -1,6 +1,7 @@
 const myForm = document.querySelector("#myForm");
 const myColor = document.querySelector("#color");
 const myRango = document.querySelector("#range");
+const imagen = document.getElementById("imagen");
 const valorRango = document.querySelector("#valor");
 const selectedMarca = document.querySelector('input[name="marca"]');
 const myBorrador = document.querySelector('input[name="borrador"]');
@@ -25,40 +26,41 @@ class lapiz{
 window.addEventListener("DOMContentLoaded",() => {
     const load = new lapiz({});
     valorRango.textContent= `${myRango.value} Cm`;
-    myColor.value=  load.value;
     selectedMarca.checked = load.getMarca();
-    console.log(myMaterial.checked = load.material);
-    myMaterial.checked = load.material;
     myBorrador.checked = load.borrador;
-    console.log(load);
-    
+    myMaterial.forEach(material => {
+        if (material.value === load.material) {
+            material.checked = true; 
+        }
+    });
 })
 
-
-myRango.addEventListener('input', (e)=>{
+  let dataRango = myRango.addEventListener('input', (e)=>{
     const valor = e.target.value;
-    valorRango.textContent= `${valor} Cm`;});
-
+    valorRango.textContent= `${valor} Cm`;
+    imagen.style.width = `${valor*0.8}Cm`;
+});
 
 
 
 
 const lectura = myForm.addEventListener('submit',(e)=>{
     e.preventDefault();
+    const selectedMarca = document.querySelector('input[name="marca"]:checked');
     const formData = new FormData(myForm);
     const formDataObj = Object.fromEntries(formData.entries());
     if (selectedMarca) {formDataObj.marca = selectedMarca.value;};
-    const miLapiz = new lapiz(formDataObj)
+    const miLapiz = new lapiz(formDataObj);
+    const tieneBorrador = miLapiz.borrador ? 'Tiene' : 'No Tiene';
     const table = document.querySelector("#table").insertAdjacentHTML("beforeend",`
     <tr>
-           <th>${miLapiz.color}</th>
-           <th>${miLapiz.range} Cm</th>
-           <th>${miLapiz.getMarca()}</th>
-           <th>${miLapiz.borrador}</th>
-           <th>${miLapiz.material}</th>
-   </tr>`);
+            <th>${miLapiz.color}</th>
+            <th>${miLapiz.range} Cm</th>
+            <th>${miLapiz.getMarca()}</th>
+            <th>${tieneBorrador}</th>
+            <th>${miLapiz.material}</th>
+    </tr>`);
     console.table(miLapiz);
 });
-
 
 
