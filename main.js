@@ -7,6 +7,21 @@ const selectedMarca = document.querySelector('input[name="marca"]');
 const myBorrador = document.querySelector('input[name="borrador"]');
 const myMaterial= document.querySelectorAll('input[name="material"]');
 
+window.addEventListener("DOMContentLoaded", (e) => {
+    const animation = localStorage.getItem("animation");
+    const loader = document.getElementById("loader");
+    if (!animation) {
+      loader.style.display = "flex";
+      localStorage.setItem("animation", true);
+    }
+   setTimeout((e) => {
+      loader.style.display = "none";
+    }, 8000);
+  });
+
+
+  
+  
 
 class lapiz{
     #marca
@@ -51,13 +66,12 @@ const lectura = myForm.addEventListener('submit',(e)=>{
     const formDataObj = Object.fromEntries(formData.entries());
     if (selectedMarca) {formDataObj.marca = selectedMarca.value;};
     const miLapiz = new lapiz(formDataObj);
-    const tieneBorrador = miLapiz.borrador ? 'Tiene' : 'No Tiene';
     const table = document.querySelector("#table").insertAdjacentHTML("beforeend",`
     <tr>
             <th>${miLapiz.color}</th>
             <th>${miLapiz.range} Cm</th>
             <th>${miLapiz.getMarca()}</th>
-            <th>${tieneBorrador}</th>
+            <th>${miLapiz.borrador}</th>
             <th>${miLapiz.material}</th>
     </tr>`);
     console.table(miLapiz);
